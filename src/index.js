@@ -2,6 +2,7 @@ import "./styles.css";
 import menu from "./menu";
 
 const menuItems = menu.items;
+console.log(menuItems);
 
 /* each key is a 'type' containing array of items of that type  */
 const sections = {};
@@ -20,4 +21,45 @@ Object.keys(sections).forEach((type) => {
 	sections[type].sort((item1, item2) => item1.menuOrder - item2.menuOrder);
 });
 
-console.log(menuItems);
+/* renders */
+Object.keys(sections).forEach((type) => {
+	sections[type].forEach((item) => {
+		let itemElement = createItemElement(item);
+
+		// assumption: the id of container is exactly same as the type name.
+		document.getElementById(type).appendChild(itemElement);
+	});
+});
+
+/* Creates and returns a '.item' element from a menuItem object. */
+function createItemElement(item) {
+	let itemElement = document.createElement("div");
+	itemElement.classList.add("item");
+
+	// name
+	let nameElement = document.createElement("h3");
+	nameElement.classList.add("name");
+	nameElement.textContent = item.menuOrder + 1 + ". " + item.name;
+
+	if (item.spicy) {
+		let spicyElement = document.createElement("span");
+		spicyElement.classList.add("spicy");
+		nameElement.appendChild(spicyElement);
+	}
+
+	// price
+	let priceElement = document.createElement("div");
+	priceElement.classList.add("price");
+	priceElement.textContent = "$" + item.price;
+
+	// description
+	let descElement = document.createElement("div");
+	descElement.classList.add("desc");
+	descElement.textContent = item.description + ".";
+
+	itemElement.appendChild(nameElement);
+	itemElement.appendChild(descElement);
+	itemElement.appendChild(priceElement);
+
+	return itemElement;
+}

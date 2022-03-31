@@ -1,15 +1,32 @@
 body {
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 .spicy:before {
-  width: 16px;
-  height: 16px;
-  content: "";
-  background-image: url("../assets/spicy.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  padding-right: 3px;
-  position: relative;
-  top: 2px;
+	width: 16px;
+	height: 16px;
+	content: "";
+	background-image: url("../assets/spicy.svg");
+	background-repeat: no-repeat;
+	display: inline-block;
+	padding-right: 3px;
+	margin-left: 3px;
+	position: relative;
+	top: 2px;
+}
+
+.item {
+	margin-left: 16px;
+}
+
+.item > * {
+	margin-bottom: 4px;
+}
+
+.item > .price {
+	display: inline;
+	font-size: 10pt;
+	border: 1px solid orange;
+	background-color: yellow;
+	padding: 4px;
 }
