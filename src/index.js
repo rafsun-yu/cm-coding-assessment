@@ -42,9 +42,7 @@ function createItemElement(item) {
 	nameElement.textContent = item.menuOrder + 1 + ". " + item.name;
 
 	if (item.spicy) {
-		let spicyElement = document.createElement("span");
-		spicyElement.classList.add("spicy");
-		nameElement.appendChild(spicyElement);
+		itemElement.classList.add("spicy");
 	}
 
 	// price
