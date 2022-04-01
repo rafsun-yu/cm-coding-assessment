@@ -1,5 +1,32 @@
 body {
 	font-family: sans-serif;
+	font-family: "Merienda", cursive;
+	font-size: 12pt;
+	background-image: linear-gradient(
+			rgba(255, 233, 201, 0.95),
+			rgba(255, 233, 201, 0.95)
+		),
+		url("../assets/pizza-pattern.jpg");
+}
+
+h1 {
+	font-family: "Italianno", cursive;
+	font-size: 72pt;
+	text-align: center;
+	margin: 0;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: "Italianno", cursive;
+	font-weight: normal;
+	letter-spacing: 8pt;
+	font-size: 38pt;
+	margin-bottom: 0;
+	background-image: url("../assets/item-type-pattern.svg");
+	background-size: contain;
+	color: white;
+	text-align: center;
 }
 
 .item {
@@ -12,10 +39,13 @@ body {
 
 .item > .price {
 	display: inline;
-	font-size: 10pt;
 	border: 1px solid orange;
 	background-color: yellow;
 	padding: 4px;
+}
+
+.item > .desc {
+	font-size: 10pt;
 }
 
 .hidden {
@@ -34,4 +64,10 @@ body {
 	margin-left: 3px;
 	position: relative;
 	top: 2px;
+}
+
+@media only screen and (max-width: 720px) {
+	h1 {
+		font-size: 38pt;
+	}
 }
