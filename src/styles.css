@@ -18,6 +18,10 @@ body {
 	padding: 4px;
 }
 
+.hidden {
+	display: none;
+}
+
 .spicy > .name:after,
 .disclaimer.spicy:before {
 	width: 16px;

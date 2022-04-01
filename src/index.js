@@ -31,6 +31,17 @@ Object.keys(sections).forEach((type) => {
 	});
 });
 
+/* event handler for show spicy checkbox */
+document.getElementById("show-spicy").onchange = (e) => {
+	document.querySelectorAll(".item.spicy").forEach((element, key, parent) => {
+		if (e.target.checked) {
+			element.classList.remove("hidden");
+		} else {
+			element.classList.add("hidden");
+		}
+	});
+};
+
 /* Creates and returns a '.item' element from a menuItem object. */
 function createItemElement(item) {
 	let itemElement = document.createElement("div");
