@@ -22,14 +22,16 @@ Object.keys(sections).forEach((type) => {
 });
 
 /* renders */
-Object.keys(sections).forEach((type) => {
-	sections[type].forEach((item) => {
-		let itemElement = createItemElement(item);
+window.onload = () => {
+	Object.keys(sections).forEach((type) => {
+		sections[type].forEach((item) => {
+			let itemElement = createItemElement(item);
 
-		// assumption: the id of container is exactly same as the type name.
-		document.getElementById(type).appendChild(itemElement);
+			// assumption: the id of container is exactly same as the type name.
+			document.getElementById(type).appendChild(itemElement);
+		});
 	});
-});
+};
 
 /* event handler for show spicy checkbox */
 document.getElementById("show-spicy").onchange = (e) => {
